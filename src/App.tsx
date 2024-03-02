@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import { Route, Routes } from 'react-router-dom';
+import Admin from './components/Admin';
+import SimpleSlider from './components/Home';
+import Edit from './components/Edit';
+import List from './components/List';
+import Save from './components/Save';
+import Search from './components/Search';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+
+    <Routes>
+      <Route path='/' element={ <SimpleSlider/> }/>
+      <Route path='/admin' element={ <Admin/> }/>
+      <Route path='/edit/:id' element={ <Edit/> }/>
+      <Route path='/list/:id' element={ <List/> }/>
+      {/* <Route path='/listTwo/:id' element={ <ListTwo/> }/> */}
+      <Route path='/save' element={ <Save/> }/>
+      <Route path='/search/:name' element={ <Search/> }/>
+    </Routes>
+
+
     </div>
   );
 }
