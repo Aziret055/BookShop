@@ -9,10 +9,6 @@ function Search() {
   const ress = datas.filter((el: any) => el.name === name);
   console.log(ress);
 
-useEffect(() => {
-    readProduct()
-}, [])
-
   return (
     <div className="flex items-center justify-center flex-wrap my-11">
       {ress.map((el:any) => (

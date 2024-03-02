@@ -15,11 +15,7 @@ function KategoryBlock({ el }: any) {
   const { delProduct, readProduct, onProduct, getProducts } =
     useProductContext();
 
-  useEffect(() => {
-    readProduct();
-  }, []);
-
-  console.log('product',onProduct);
+  console.log("product", onProduct);
 
   function handleBasket(el: any) {
     getProducts(el.id);
